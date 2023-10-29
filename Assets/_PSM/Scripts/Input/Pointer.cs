@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 namespace ProjectShowMe.Input
 {
+    // Inplement this interface to receive the input events when the pointer interacts
+    // with the parent transform.
     public interface IInputReceiver
     {
         public void OnClick();
@@ -12,12 +14,16 @@ namespace ProjectShowMe.Input
 
     }
 
+    /// <summary>
+    /// A class to propagate interaction events to the <see cref="IInputReceiver"/> classes.
+    /// </summary>
     public class Pointer : MonoBehaviour
     {
         private InputActionsCore _inputActions = null;
         private Transform _currentInputReceiver = null;
         private Vector2 _mousePosition;
 
+        // Setup all the input events.
         void Awake()
         {
             _inputActions = new InputActionsCore();
@@ -27,14 +33,17 @@ namespace ProjectShowMe.Input
             _inputActions.Enable();
         }
 
-        private void LateUpdate()
+        // Raycast towards the mouse position to interact with the hit IInputReceiver classes.
+        private void FixedUpdate()
         {
+            // Fire the raycast and check if it hit something.
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(_mousePosition), out RaycastHit hitInfo);
             if (!hit) {
                 OnHoverExit();
                 return;
             }
 
+            // If we stop hovering over the current transform, switch to the other transform.
             if (hitInfo.transform != _currentInputReceiver) {
                 OnHoverExit();
                 _currentInputReceiver = hitInfo.transform;
@@ -59,6 +68,7 @@ namespace ProjectShowMe.Input
             _inputActions?.Disable();
         }
 
+        // If the cancel button is pressed, just exit the hover.
         public void OnCancel(InputAction.CallbackContext context)
         {
             if (!context.performed)
@@ -68,6 +78,7 @@ namespace ProjectShowMe.Input
             _currentInputReceiver = null;
         }
 
+        // If the click button is pressed, propagate the click event to the input receiver.
         public void OnClick(InputAction.CallbackContext context)
         {
             if (!_currentInputReceiver)
@@ -82,6 +93,7 @@ namespace ProjectShowMe.Input
             }
         }
 
+        // If the mouse moves, store the current mouse position.
         public void OnPoint(InputAction.CallbackContext context)
         {
             if (!context.performed)
@@ -90,6 +102,7 @@ namespace ProjectShowMe.Input
             _mousePosition = context.ReadValue<Vector2>();
         }
 
+        // Propagate the hover enter event to the input receivers on the current input receiver transform.
         private void OnHoverEnter()
         {
             if (!_currentInputReceiver)
@@ -104,6 +117,7 @@ namespace ProjectShowMe.Input
             }
         }
 
+        // Propagate the hover exit event to the input receivers on the current input receiver transform.
         private void OnHoverExit()
         {
             if (!_currentInputReceiver)
@@ -119,6 +133,7 @@ namespace ProjectShowMe.Input
             _currentInputReceiver = null;
         }
 
+        // Bind the input event to all the action events.
         private void AddListener(InputAction action, Action<InputAction.CallbackContext> listener)
         {
             action.started += listener;
@@ -126,6 +141,7 @@ namespace ProjectShowMe.Input
             action.canceled += listener;
         }
 
+        // Unbind the input event to all the action events.
         private void RemoveListener(InputAction action, Action<InputAction.CallbackContext> listener)
         {
             action.started -= listener;

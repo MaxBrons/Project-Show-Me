@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 118667894}
   - component: {fileID: 118667893}
   - component: {fileID: 118667892}
+  - component: {fileID: 118667896}
   - component: {fileID: 118667895}
   m_Layer: 0
   m_Name: Picture
@@ -238,18 +239,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 118667890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _scale: 1.1
+  _overideTargets: []
+--- !u!114 &118667896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118667890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets: []
 --- !u!1 &130078365
 GameObject:
   m_ObjectHideFlags: 0
@@ -328,7 +336,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 7.552, z: 0}
-  m_LocalScale: {x: 26.91, y: 15, z: 0.1}
+  m_LocalScale: {x: 64.09, y: 130.9, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -428,7 +436,8 @@ GameObject:
   - component: {fileID: 255517870}
   - component: {fileID: 255517869}
   - component: {fileID: 255517868}
-  - component: {fileID: 255517872}
+  - component: {fileID: 255517874}
+  - component: {fileID: 255517875}
   m_Layer: 0
   m_Name: Folder
   m_TagString: Untagged
@@ -522,7 +531,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 20.419, z: 0}
---- !u!114 &255517872
+--- !u!114 &255517874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -531,18 +540,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 255517867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _highlightLayer: 6
+  _overideTargets: []
+--- !u!114 &255517875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255517867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scale: 1.1
+  _overideTargets: []
 --- !u!1 &355013928
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +571,7 @@ GameObject:
   - component: {fileID: 355013932}
   - component: {fileID: 355013931}
   - component: {fileID: 355013930}
+  - component: {fileID: 355013934}
   - component: {fileID: 355013933}
   m_Layer: 0
   m_Name: Sticky Note
@@ -658,18 +675,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 355013928}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _scale: 1.1
+  _overideTargets: []
+--- !u!114 &355013934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 355013928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets: []
 --- !u!1 &390475892
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,6 +1023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 633143895}
   - component: {fileID: 633143894}
+  - component: {fileID: 633143897}
   - component: {fileID: 633143896}
   m_Layer: 0
   m_Name: Computer Group
@@ -1055,9 +1080,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 633143893}
   m_Enabled: 1
   m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scale: 1.1
+  _overideTargets:
+  - {fileID: 2089732153}
+  - {fileID: 608792495}
+  - {fileID: 181383633}
+--- !u!114 &633143897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633143893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets:
+  - {fileID: 2089732149}
+  - {fileID: 608792491}
+  - {fileID: 181383629}
 --- !u!1 &685168703
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1117,7 @@ GameObject:
   - component: {fileID: 685168707}
   - component: {fileID: 685168706}
   - component: {fileID: 685168705}
+  - component: {fileID: 685168709}
   - component: {fileID: 685168708}
   m_Layer: 0
   m_Name: Sticky Note
@@ -1173,18 +1221,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 685168703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _scale: 1.1
+  _overideTargets: []
+--- !u!114 &685168709
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 685168703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets: []
 --- !u!1 &698066452
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,6 +1252,7 @@ GameObject:
   - component: {fileID: 698066456}
   - component: {fileID: 698066455}
   - component: {fileID: 698066454}
+  - component: {fileID: 698066458}
   - component: {fileID: 698066457}
   m_Layer: 0
   m_Name: Picture
@@ -1300,18 +1356,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 698066452}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _scale: 1.1
+  _overideTargets: []
+--- !u!114 &698066458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698066452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets: []
 --- !u!1 &765892952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1324,6 +1387,7 @@ GameObject:
   - component: {fileID: 765892956}
   - component: {fileID: 765892955}
   - component: {fileID: 765892954}
+  - component: {fileID: 765892958}
   - component: {fileID: 765892957}
   m_Layer: 0
   m_Name: Sticky Note
@@ -1427,18 +1491,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 765892952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _scale: 1.1
+  _overideTargets: []
+--- !u!114 &765892958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765892952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets: []
 --- !u!1 &813293663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,6 +1724,7 @@ GameObject:
   - component: {fileID: 923964476}
   - component: {fileID: 923964475}
   - component: {fileID: 923964474}
+  - component: {fileID: 923964478}
   - component: {fileID: 923964477}
   m_Layer: 0
   m_Name: Picture
@@ -1756,18 +1828,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 923964472}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _scale: 1.1
+  _overideTargets: []
+--- !u!114 &923964478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923964472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets: []
 --- !u!1 &994082538
 GameObject:
   m_ObjectHideFlags: 0
@@ -1855,6 +1934,7 @@ GameObject:
   - component: {fileID: 1081933421}
   - component: {fileID: 1081933420}
   - component: {fileID: 1081933419}
+  - component: {fileID: 1081933423}
   - component: {fileID: 1081933422}
   m_Layer: 0
   m_Name: Picture
@@ -1958,18 +2038,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1081933417}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _scale: 1.1
+  _overideTargets: []
+--- !u!114 &1081933423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081933417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets: []
 --- !u!1 &1160039555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,7 +2067,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1160039559}
   - component: {fileID: 1160039561}
-  - component: {fileID: 1160039560}
+  - component: {fileID: 1160039563}
+  - component: {fileID: 1160039562}
   m_Layer: 0
   m_Name: Stamp Group
   m_TagString: Untagged
@@ -2005,27 +2093,6 @@ Transform:
   - {fileID: 390475893}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -64.412, z: 0}
---- !u!114 &1160039560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1160039555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!65 &1160039561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2047,6 +2114,36 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.5, z: 1}
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &1160039562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160039555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scale: 1.1
+  _overideTargets: []
+--- !u!114 &1160039563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160039555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets:
+  - {fileID: 816427611}
+  - {fileID: 390475892}
 --- !u!1 &1296021705
 GameObject:
   m_ObjectHideFlags: 0
@@ -2132,7 +2229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1356721800}
   m_Layer: 0
-  m_Name: Pictures
+  m_Name: Picture Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2171,6 +2268,7 @@ GameObject:
   - component: {fileID: 1378021471}
   - component: {fileID: 1378021470}
   - component: {fileID: 1378021469}
+  - component: {fileID: 1378021473}
   - component: {fileID: 1378021472}
   m_Layer: 0
   m_Name: Sticky Note
@@ -2274,18 +2372,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1378021467}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _scale: 1.1
+  _overideTargets: []
+--- !u!114 &1378021473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1378021467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets: []
 --- !u!1 &1651238191
 GameObject:
   m_ObjectHideFlags: 0
@@ -2470,7 +2575,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.012435, y: 3.2919996, z: -2.25}
-  m_LocalScale: {x: 26.91, y: 0.3, z: 5}
+  m_LocalScale: {x: 85.3, y: 0.3, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2622,7 +2727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1832080727}
   m_Layer: 0
-  m_Name: Sticky Notes
+  m_Name: Sticky Note Group
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2659,7 +2764,6 @@ GameObject:
   - component: {fileID: 1934428038}
   - component: {fileID: 1934428037}
   - component: {fileID: 1934428036}
-  - component: {fileID: 1934428039}
   m_Layer: 0
   m_Name: Picture Main
   m_TagString: Untagged
@@ -2753,27 +2857,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934428034}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1934428039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1934428034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &1959161329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2786,6 +2869,7 @@ GameObject:
   - component: {fileID: 1959161333}
   - component: {fileID: 1959161332}
   - component: {fileID: 1959161331}
+  - component: {fileID: 1959161335}
   - component: {fileID: 1959161334}
   m_Layer: 0
   m_Name: Picture
@@ -2889,18 +2973,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1959161329}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab86bfff3610d5449f4c9c16f31f843, type: 3}
+  m_Script: {fileID: 11500000, guid: 90607b84610f14c4da13e74cb84a6179, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnClickEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverEnterEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  OnHoverExitEvent:
-    m_PersistentCalls:
-      m_Calls: []
+  _scale: 1.1
+  _overideTargets: []
+--- !u!114 &1959161335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959161329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b692d2f45405d9b4bbe45c5c1a4880fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightLayer: 6
+  _overideTargets: []
 --- !u!1 &2051307203
 GameObject:
   m_ObjectHideFlags: 0
