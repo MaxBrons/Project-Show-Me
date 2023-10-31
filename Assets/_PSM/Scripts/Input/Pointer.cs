@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,8 +22,9 @@ namespace ProjectShowMe.Input
     public class Pointer : MonoBehaviour
     {
         private InputActionsCore _inputActions = null;
-        private Transform _currentInputReceiver = null;
+        private Transform _currentInputReceiverObject = null;
         private Vector2 _mousePosition;
+        private List<IInputReceiver> _currentInputReceivers = new();
 
         // Setup all the input events.
         void Awake()
@@ -44,9 +47,10 @@ namespace ProjectShowMe.Input
             }
 
             // If we stop hovering over the current transform, switch to the other transform.
-            if (hitInfo.transform != _currentInputReceiver) {
+            if (hitInfo.transform != _currentInputReceiverObject) {
                 OnHoverExit();
-                _currentInputReceiver = hitInfo.transform;
+                _currentInputReceiverObject = hitInfo.transform;
+                _currentInputReceivers = _currentInputReceiverObject.GetComponents<IInputReceiver>().Where(x => (x as MonoBehaviour).enabled).ToList();
                 OnHoverEnter();
             }
         }
@@ -75,7 +79,8 @@ namespace ProjectShowMe.Input
                 return;
 
             OnHoverExit();
-            _currentInputReceiver = null;
+            _currentInputReceiverObject = null;
+            _currentInputReceivers = new();
         }
 
         // If the click button is pressed, propagate the click event to the input receiver.
@@ -84,14 +89,13 @@ namespace ProjectShowMe.Input
             if (!context.performed)
                 return;
 
-            if (!_currentInputReceiver)
+            if (!_currentInputReceiverObject)
                 return;
 
-            IInputReceiver[] inputReceivers = _currentInputReceiver.GetComponents<IInputReceiver>();
-            if (inputReceivers == null)
+            if (_currentInputReceivers.Count < 1)
                 return;
 
-            foreach (var inputReceiver in inputReceivers) {
+            foreach (var inputReceiver in _currentInputReceivers) {
                 inputReceiver.OnClick();
             }
         }
@@ -108,14 +112,13 @@ namespace ProjectShowMe.Input
         // Propagate the hover enter event to the input receivers on the current input receiver transform.
         private void OnHoverEnter()
         {
-            if (!_currentInputReceiver)
+            if (!_currentInputReceiverObject)
                 return;
 
-            IInputReceiver[] inputReceivers = _currentInputReceiver.GetComponents<IInputReceiver>();
-            if (inputReceivers == null)
+            if (_currentInputReceivers.Count < 1)
                 return;
 
-            foreach (var inputReceiver in inputReceivers) {
+            foreach (var inputReceiver in _currentInputReceivers) {
                 inputReceiver.OnHoverEnter();
             }
         }
@@ -123,17 +126,16 @@ namespace ProjectShowMe.Input
         // Propagate the hover exit event to the input receivers on the current input receiver transform.
         private void OnHoverExit()
         {
-            if (!_currentInputReceiver)
+            if (!_currentInputReceiverObject)
                 return;
 
-            IInputReceiver[] inputReceivers = _currentInputReceiver.GetComponents<IInputReceiver>();
-            if (inputReceivers == null)
+            if (_currentInputReceivers.Count < 1)
                 return;
 
-            foreach (var inputReceiver in inputReceivers) {
+            foreach (var inputReceiver in _currentInputReceivers) {
                 inputReceiver.OnHoverExit();
             }
-            _currentInputReceiver = null;
+            _currentInputReceiverObject = null;
         }
 
         // Bind the input event to all the action events.
