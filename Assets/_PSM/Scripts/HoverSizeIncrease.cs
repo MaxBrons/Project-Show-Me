@@ -1,5 +1,4 @@
 using ProjectShowMe.Input;
-using UnityEditor.UIElements;
 using UnityEngine;
 
 /// <summary>
@@ -19,7 +18,7 @@ public class HoverSizeIncrease : MonoBehaviour, IInputReceiver
     {
         if (_overideTargets == null || _overideTargets.Length < 1)
             _overideTargets = new Transform[] { transform };
-       
+
         SetDefaultScales();
         OnHoverExit();
     }
