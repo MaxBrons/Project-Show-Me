@@ -81,6 +81,9 @@ namespace ProjectShowMe.Input
         // If the click button is pressed, propagate the click event to the input receiver.
         public void OnClick(InputAction.CallbackContext context)
         {
+            if (!context.performed)
+                return;
+
             if (!_currentInputReceiver)
                 return;
 
