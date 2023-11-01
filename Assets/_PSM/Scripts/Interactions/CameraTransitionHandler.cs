@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Threading;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CameraTransitionHandler : MonoBehaviour
@@ -16,8 +15,6 @@ public class CameraTransitionHandler : MonoBehaviour
     [SerializeField] private Canvas _interactionUI;
     [SerializeField] private Button _backButton;
 
-    private UnityAction _onBackButtonPressed;
-
     private Transform _targetLocation;
     private Transform _returnLocation;
     private IEnumerator _forwardTransition;
@@ -25,9 +22,9 @@ public class CameraTransitionHandler : MonoBehaviour
 
     private void Start()
     {
-        _onBackButtonPressed += OnBackButtonPressed;
         _interactionUI.enabled = false;
     }
+
     public void StartTransition(Transform targetLocation, Transform returnLocation)
     {
         if (!_camera || !targetLocation || !returnLocation)
@@ -38,7 +35,7 @@ public class CameraTransitionHandler : MonoBehaviour
         _returnLocation = returnLocation;
 
         _backButton.onClick.RemoveAllListeners();
-        _backButton.onClick.AddListener(_onBackButtonPressed);
+        _backButton.onClick.AddListener(OnBackButtonPressed);
 
         OnTransitionToTarget?.Invoke(targetLocation);
 

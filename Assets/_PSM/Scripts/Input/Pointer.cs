@@ -112,6 +112,7 @@ namespace ProjectShowMe.Input
         // Propagate the hover enter event to the input receivers on the current input receiver transform.
         private void OnHoverEnter()
         {
+
             if (!_currentInputReceiverObject)
                 return;
 

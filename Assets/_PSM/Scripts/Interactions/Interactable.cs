@@ -1,4 +1,5 @@
 using ProjectShowMe.Input;
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,22 +9,29 @@ using UnityEngine.Events;
 /// </summary>
 public class Interactable : MonoBehaviour, IInputReceiver
 {
-    [SerializeField] private UnityEvent OnClickEvent;
-    [SerializeField] private UnityEvent OnHoverEnterEvent;
-    [SerializeField] private UnityEvent OnHoverExitEvent;
+    public event Action OnClickEvent;
+    public event Action OnHoverEnterEvent;
+    public event Action OnHoverExitEvent;
+
+    [SerializeField] private UnityEvent ClickEvent;
+    [SerializeField] private UnityEvent HoverEnterEvent;
+    [SerializeField] private UnityEvent HoverExitEvent;
 
     public void OnClick()
     {
+        ClickEvent?.Invoke();
         OnClickEvent?.Invoke();
     }
 
     public void OnHoverEnter()
     {
+        HoverEnterEvent?.Invoke();
         OnHoverEnterEvent?.Invoke();
     }
 
     public void OnHoverExit()
     {
+        HoverExitEvent?.Invoke();
         OnHoverExitEvent?.Invoke();
     }
 }

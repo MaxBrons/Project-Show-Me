@@ -8,6 +8,7 @@ public class MoveCameraInteraction : MonoBehaviour, IInputReceiver
     [SerializeField] private Transform _targetLocation;
     [SerializeField] private CameraTransitionHandler _handler;
     [SerializeField] private List<MonoBehaviour> _componentsToDisableOnInteraction = new();
+    [SerializeField] private List<MonoBehaviour> _componentsToEnableOnInteraction = new();
     [SerializeField] private List<Collider> _collidersToDisableOnInteraction = new();
 
     public void OnClick()
@@ -21,19 +22,19 @@ public class MoveCameraInteraction : MonoBehaviour, IInputReceiver
         _handler.OnTransitionToTarget -= OnTransitionToTarget;
         _handler.OnTransitionToTarget += OnTransitionToTarget;
 
-        _componentsToDisableOnInteraction.ForEach(x => x.enabled = false);
-
         _handler.StartTransition(_targetLocation, _defaultLocation);
     }
 
     private void OnTransitionToTarget(Transform target)
     {
-        if (_targetLocation.position == target.position)
-            return;
+        bool enabledState = _targetLocation.position == target.position;
 
-        _handler.OnReturnButtonPressed -= OnReturnButtonPressed;
-        _componentsToDisableOnInteraction.ForEach(x => x.enabled = true);
-        _collidersToDisableOnInteraction.ForEach(x => x.enabled = true);
+        if (!enabledState)
+            _handler.OnReturnButtonPressed -= OnReturnButtonPressed;
+
+        _componentsToDisableOnInteraction.ForEach(x => x.enabled = !enabledState);
+        _collidersToDisableOnInteraction.ForEach(x => x.enabled = !enabledState);
+        _componentsToEnableOnInteraction.ForEach(x => x.enabled = enabledState);
     }
 
     private void OnReturnButtonPressed(Transform target)
@@ -44,6 +45,7 @@ public class MoveCameraInteraction : MonoBehaviour, IInputReceiver
         _handler.OnReturnButtonPressed -= OnReturnButtonPressed;
         _componentsToDisableOnInteraction.ForEach(x => x.enabled = true);
         _collidersToDisableOnInteraction.ForEach(x => x.enabled = true);
+        _componentsToEnableOnInteraction.ForEach(x => x.enabled = false);
     }
 
     public void OnHoverEnter()
