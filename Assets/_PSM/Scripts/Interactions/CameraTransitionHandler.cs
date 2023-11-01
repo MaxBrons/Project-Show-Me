@@ -60,7 +60,6 @@ public class CameraTransitionHandler : MonoBehaviour
 
     private IEnumerator MoveCamera(Transform target)
     {
-        float startDistance = Vector3.Distance(_camera.transform.position, target.position);
         const float targetDistanceThreshold = 0.1f;
         const int timerThreshold = 5000;
         CancellationTokenSource token = new CancellationTokenSource(timerThreshold);
@@ -69,8 +68,8 @@ public class CameraTransitionHandler : MonoBehaviour
             float distance = Vector3.Distance(_camera.transform.position, target.position);
             float angle = Mathf.Abs(Quaternion.Angle(_camera.transform.rotation, target.rotation));
 
-            _camera.transform.position = Vector3.MoveTowards(_camera.transform.position, target.position, _maxTransitionSpeed);
-            _camera.transform.rotation = Quaternion.RotateTowards(_camera.transform.rotation, target.rotation, _maxRotationSpeed);
+            _camera.transform.position = Vector3.MoveTowards(_camera.transform.position, target.position, _maxTransitionSpeed * Time.deltaTime);
+            _camera.transform.rotation = Quaternion.RotateTowards(_camera.transform.rotation, target.rotation, _maxRotationSpeed * Time.deltaTime);
 
             if (distance < targetDistanceThreshold && angle < targetDistanceThreshold)
                 token.Cancel();

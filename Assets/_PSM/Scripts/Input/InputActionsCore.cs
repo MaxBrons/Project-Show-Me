@@ -53,7 +53,7 @@ namespace ProjectShowMe.Input
                     ""id"": ""7b5a70c7-c0c7-4113-bab5-01645718f034"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""initialStateCheck"": false
                 }
             ],

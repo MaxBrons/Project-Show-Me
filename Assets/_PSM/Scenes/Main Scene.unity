@@ -705,8 +705,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _camera: {fileID: 892077276}
-  _maxTransitionSpeed: 0.15
-  _maxRotationSpeed: 1.5
+  _maxTransitionSpeed: 12
+  _maxRotationSpeed: 100
   _interactionUI: {fileID: 1311271836}
   _backButton: {fileID: 1245959600}
 --- !u!114 &1044366332
