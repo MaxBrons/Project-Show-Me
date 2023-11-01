@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
                  "You have not found the right person.",
                  "BOB",
                  _pictures[_pictureIndexToReport].Sprite,
-                 _pictures[_pictureIndexToReport].Sprite == _mainPicture.sprite,
+                 _pictureIndexToReport == _currentSelectedPictureIndex,
                  _folder.activeSelf,
                  _computerEmailsRead,
                  _stickyNotes.Any(x => x.activeSelf),
