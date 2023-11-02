@@ -79,14 +79,15 @@ public class GameManager : MonoBehaviour
         _endScreen.Initialize(
                 "GOOD JOB!",
                 "You found the right person.",
-                "BOB",
+                _pictures[_currentSelectedPictureIndex].Name,
+                _pictures[_pictureIndexToReport].Name,
                 _pictures[_pictureIndexToReport].Sprite,
                 _pictureIndexToReport == _currentSelectedPictureIndex,
                 _folder.activeSelf,
                 _computerEmailsRead,
                 _stickyNotes.Any(x => x.activeSelf),
                 Time.realtimeSinceStartup
-            );
+            );;
 
         _endScreen.gameObject.SetActive(true);
     }
@@ -96,7 +97,8 @@ public class GameManager : MonoBehaviour
         _endScreen.Initialize(
                  "OH NO!",
                  "You have not found the right person.",
-                 "BOB",
+                 _pictures[_currentSelectedPictureIndex].Name,
+                 _pictures[_pictureIndexToReport].Name,
                  _pictures[_pictureIndexToReport].Sprite,
                  _pictureIndexToReport == _currentSelectedPictureIndex,
                  _folder.activeSelf,
